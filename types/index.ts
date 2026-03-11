@@ -4,12 +4,18 @@ export interface Project {
   description: string;
   tags: string[];
   githubUrl: string;
+  status?: "active" | "wip" | "archived";
 }
 
 export interface TechItem {
   icon: string;
   name: string;
   description: string;
+}
+
+export interface Stat {
+  value: string;
+  label: string;
 }
 
 export interface SiteConfig {
