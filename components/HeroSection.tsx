@@ -9,12 +9,18 @@ const roles = [
   "Automation Builder",
   "Open Source Contributor",
   "System Tinkerer",
+  "Security Enthusiast",
 ];
 
 export function HeroSection() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   useEffect(() => {
     const current = roles[roleIndex];
@@ -42,52 +48,112 @@ export function HeroSection() {
       {/* Grid background */}
       <div className="absolute inset-0 grid-bg" />
 
-      {/* Radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_60%,rgba(6,182,212,0.08),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_30%,rgba(6,182,212,0.04),transparent_40%)]" />
+      {/* Animated gradient orbs */}
+      <div className="absolute top-1/4 -left-32 w-96 h-96 bg-cyan-500/[0.04] rounded-full blur-3xl animate-breathe" />
+      <div className="absolute bottom-1/4 -right-32 w-80 h-80 bg-cyan-400/[0.03] rounded-full blur-3xl animate-breathe" style={{ animationDelay: "2s" }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/[0.02] rounded-full blur-3xl animate-breathe" style={{ animationDelay: "1s" }} />
 
       {/* Scan line */}
       <div className="scan-line" />
 
       {/* Floating particles */}
-      <div className="absolute top-1/4 left-[10%] w-1 h-1 bg-cyan-500/30 rounded-full animate-float" />
-      <div className="absolute top-1/3 right-[15%] w-1.5 h-1.5 bg-cyan-400/20 rounded-full animate-float-slow" />
-      <div className="absolute bottom-1/3 left-[20%] w-1 h-1 bg-cyan-500/25 rounded-full animate-float-delayed" />
-      <div className="absolute top-[60%] right-[25%] w-0.5 h-0.5 bg-cyan-400/30 rounded-full animate-float" />
-      <div className="absolute top-[20%] right-[40%] w-1 h-1 bg-cyan-500/15 rounded-full animate-float-slow" />
-      <div className="absolute bottom-[20%] left-[45%] w-1.5 h-1.5 bg-cyan-400/20 rounded-full animate-float-delayed" />
+      <div className="absolute top-[15%] left-[8%] w-1.5 h-1.5 bg-cyan-500/40 rounded-full animate-float" />
+      <div className="absolute top-[25%] right-[12%] w-2 h-2 bg-cyan-400/25 rounded-full animate-float-slow" />
+      <div className="absolute bottom-[30%] left-[18%] w-1 h-1 bg-cyan-500/35 rounded-full animate-float-delayed" />
+      <div className="absolute top-[55%] right-[22%] w-1 h-1 bg-cyan-400/30 rounded-full animate-float" />
+      <div className="absolute top-[18%] right-[35%] w-1.5 h-1.5 bg-cyan-500/20 rounded-full animate-float-slow" />
+      <div className="absolute bottom-[20%] left-[40%] w-2 h-2 bg-cyan-400/15 rounded-full animate-float-delayed" />
+      <div className="absolute top-[40%] left-[5%] w-1 h-1 bg-cyan-300/20 rounded-full animate-float" style={{ animationDelay: "0.5s" }} />
+      <div className="absolute bottom-[15%] right-[8%] w-1.5 h-1.5 bg-cyan-500/25 rounded-full animate-float-slow" style={{ animationDelay: "1s" }} />
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between gap-8 relative z-10">
+      {/* Orbiting elements */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+        <div className="w-2 h-2 bg-cyan-500/20 rounded-full animate-orbit" />
+      </div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+        <div className="w-1.5 h-1.5 bg-cyan-400/15 rounded-full animate-orbit-reverse" />
+      </div>
+
+      <div
+        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex items-center justify-between gap-8 relative z-10"
+        style={{
+          opacity: mounted ? 1 : 0,
+          transform: mounted ? "translateY(0)" : "translateY(20px)",
+          transition: "opacity 1s ease-out, transform 1s ease-out",
+        }}
+      >
         {/* Left side — text */}
         <div className="flex-1">
-          <div className="font-mono text-cyan-500/60 text-xs tracking-widest mb-6 flex items-center gap-2">
-            <span className="w-6 h-px bg-cyan-500/40" />
+          <div
+            className="font-mono text-cyan-500/60 text-xs tracking-widest mb-6 flex items-center gap-2"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateX(0)" : "translateX(-20px)",
+              transition: "opacity 0.8s ease-out 0.3s, transform 0.8s ease-out 0.3s",
+            }}
+          >
+            <span className="w-8 h-px bg-gradient-to-r from-cyan-500/60 to-transparent" />
             WELCOME
           </div>
 
-          <p className="font-mono text-cyan-400 text-sm tracking-[0.2em] mb-4">
+          <p
+            className="font-mono text-cyan-400 text-sm tracking-[0.2em] mb-4 animate-text-glow"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transition: "opacity 0.8s ease-out 0.5s",
+            }}
+          >
             @{siteConfig.username}
           </p>
 
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-slate-100 mb-3">
-            {siteConfig.name}
-            <span className="gradient-text">.</span>
+          <h1
+            className="text-5xl sm:text-6xl lg:text-8xl font-bold text-slate-100 mb-3"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(30px)",
+              transition: "opacity 0.8s ease-out 0.6s, transform 0.8s ease-out 0.6s",
+            }}
+          >
+            <span className="glitch" data-text={siteConfig.name}>
+              {siteConfig.name}
+            </span>
+            <span className="gradient-text-animated text-6xl sm:text-7xl lg:text-9xl">.</span>
           </h1>
 
-          <div className="text-lg sm:text-xl text-slate-400 mb-2 flex items-center gap-1">
+          <div
+            className="text-lg sm:text-xl text-slate-400 mb-2 flex items-center gap-1 h-8"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transition: "opacity 0.8s ease-out 0.8s",
+            }}
+          >
             <span className="font-mono text-cyan-500/60">&gt;</span>{" "}
-            <span>{displayed}</span>
-            <span className="animate-blink text-cyan-400 font-mono">|</span>
+            <span className="text-slate-300">{displayed}</span>
+            <span className="animate-blink text-cyan-400 font-mono text-xl">|</span>
           </div>
 
-          <p className="text-sm text-slate-500 mb-10 max-w-md leading-relaxed">
+          <p
+            className="text-sm sm:text-base text-slate-500 mb-10 max-w-lg leading-relaxed"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(15px)",
+              transition: "opacity 0.8s ease-out 1s, transform 0.8s ease-out 1s",
+            }}
+          >
             {siteConfig.subtitle}
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div
+            className="flex flex-wrap gap-4"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateY(0)" : "translateY(15px)",
+              transition: "opacity 0.8s ease-out 1.2s, transform 0.8s ease-out 1.2s",
+            }}
+          >
             <a
               href="#projects"
-              className="group px-6 py-3 bg-cyan-500/15 border border-cyan-500/30 rounded-md text-cyan-400 text-sm font-medium hover:bg-cyan-500/25 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] transition-all duration-300"
+              className="group relative px-7 py-3 bg-cyan-500/15 border border-cyan-500/30 rounded-md text-cyan-400 text-sm font-medium hover:bg-cyan-500/25 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:-translate-y-0.5 transition-all duration-300"
             >
               <span className="mr-2 font-mono text-cyan-500/60 group-hover:text-cyan-400 transition-colors">$</span>
               View Projects
@@ -96,7 +162,7 @@ export function HeroSection() {
               href={siteConfig.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group px-6 py-3 bg-white/5 border border-white/10 rounded-md text-slate-400 text-sm font-medium hover:border-cyan-500/30 hover:text-cyan-400 hover:bg-cyan-500/5 transition-all duration-300"
+              className="group px-7 py-3 bg-white/5 border border-white/10 rounded-md text-slate-400 text-sm font-medium hover:border-cyan-500/30 hover:text-cyan-400 hover:bg-cyan-500/5 hover:-translate-y-0.5 transition-all duration-300"
             >
               <span className="mr-2 font-mono text-slate-600 group-hover:text-cyan-500/60 transition-colors">~</span>
               GitHub Profile
@@ -104,53 +170,78 @@ export function HeroSection() {
           </div>
 
           {/* Terminal status line */}
-          <div className="mt-12 font-mono text-xs text-slate-600 flex items-center gap-4">
+          <div
+            className="mt-12 font-mono text-xs text-slate-600 flex items-center gap-4"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transition: "opacity 1s ease-out 1.5s",
+            }}
+          >
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/60 animate-pulse" />
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500/80 shadow-[0_0_6px_rgba(16,185,129,0.5)] animate-pulse" />
               online
             </span>
             <span className="text-slate-700">|</span>
             <span>ready for collaboration</span>
+            <span className="text-slate-700">|</span>
+            <span className="text-cyan-500/40">{new Date().getFullYear()}</span>
           </div>
         </div>
 
         {/* Right side — terminal window */}
         <div className="hidden md:flex flex-shrink-0 items-center justify-center">
-          <div className="relative">
+          <div
+            className="relative"
+            style={{
+              opacity: mounted ? 1 : 0,
+              transform: mounted ? "translateX(0) scale(1)" : "translateX(30px) scale(0.95)",
+              transition: "opacity 1s ease-out 0.8s, transform 1s ease-out 0.8s",
+            }}
+          >
             {/* Outer glow */}
-            <div className="absolute -inset-4 rounded-2xl bg-cyan-500/[0.03] blur-xl" />
+            <div className="absolute -inset-6 rounded-2xl bg-cyan-500/[0.04] blur-2xl animate-breathe" />
 
             {/* Terminal window */}
-            <div className="relative w-64 lg:w-72 bg-bg-card border border-cyan-500/15 rounded-lg overflow-hidden animate-glow">
+            <div className="relative w-72 lg:w-80 bg-bg-card border border-cyan-500/15 rounded-lg overflow-hidden animate-glow-strong">
               {/* Title bar */}
               <div className="flex items-center gap-2 px-4 py-2.5 bg-cyan-500/[0.06] border-b border-cyan-500/10">
-                <div className="w-2.5 h-2.5 rounded-full bg-red-500/50" />
-                <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/50" />
-                <div className="w-2.5 h-2.5 rounded-full bg-green-500/50" />
-                <span className="ml-2 font-mono text-[10px] text-slate-600">sup3x@dev ~</span>
+                <div className="flex gap-1.5">
+                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/60 hover:bg-red-500 transition-colors" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/60 hover:bg-yellow-500 transition-colors" />
+                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/60 hover:bg-green-500 transition-colors" />
+                </div>
+                <span className="ml-2 font-mono text-[10px] text-slate-600">sup3x@dev ~ zsh</span>
               </div>
 
               {/* Terminal body */}
-              <div className="p-4 font-mono text-xs space-y-2">
+              <div className="p-4 font-mono text-xs space-y-1.5">
                 <div className="text-slate-500">
                   <span className="text-cyan-500">$</span> whoami
                 </div>
-                <div className="text-slate-300">sup3x</div>
+                <div className="text-slate-200 pl-2">sup3x</div>
 
-                <div className="text-slate-500 mt-1">
+                <div className="text-slate-500 pt-1">
                   <span className="text-cyan-500">$</span> cat interests.txt
                 </div>
-                <div className="text-cyan-400/80">AI</div>
-                <div className="text-cyan-400/70">Automation</div>
-                <div className="text-cyan-400/60">Systems</div>
-                <div className="text-cyan-400/50">Open Source</div>
+                <div className="pl-2 space-y-0.5">
+                  <div className="text-cyan-400/90">Artificial Intelligence</div>
+                  <div className="text-cyan-400/75">Automation & DevOps</div>
+                  <div className="text-cyan-400/60">System Tinkering</div>
+                  <div className="text-cyan-400/50">Open Source</div>
+                  <div className="text-cyan-400/40">Security Research</div>
+                </div>
 
-                <div className="text-slate-500 mt-1">
+                <div className="text-slate-500 pt-1">
                   <span className="text-cyan-500">$</span> echo $STATUS
                 </div>
-                <div className="text-emerald-400/80">Building cool stuff...</div>
+                <div className="pl-2 text-emerald-400/90">Building cool stuff...</div>
 
-                <div className="flex items-center gap-1 text-slate-500 mt-1">
+                <div className="text-slate-500 pt-1">
+                  <span className="text-cyan-500">$</span> uptime
+                </div>
+                <div className="pl-2 text-slate-400">24/7 — always coding</div>
+
+                <div className="flex items-center gap-1 text-slate-500 pt-1">
                   <span className="text-cyan-500">$</span>
                   <span className="animate-blink text-cyan-400">_</span>
                 </div>
@@ -161,9 +252,17 @@ export function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-        <span className="text-[10px] font-mono text-slate-600 tracking-widest">SCROLL</span>
-        <div className="w-px h-8 bg-gradient-to-b from-cyan-500/40 to-transparent animate-pulse" />
+      <div
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        style={{
+          opacity: mounted ? 1 : 0,
+          transition: "opacity 1.5s ease-out 2s",
+        }}
+      >
+        <span className="text-[10px] font-mono text-slate-600 tracking-widest uppercase">Scroll</span>
+        <div className="w-5 h-8 border border-cyan-500/20 rounded-full flex justify-center pt-1.5">
+          <div className="w-1 h-2 bg-cyan-500/50 rounded-full animate-float" />
+        </div>
       </div>
     </section>
   );

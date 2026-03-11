@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { ParticleField } from "@/components/ParticleField";
 import "./globals.css";
 
 const inter = Inter({
@@ -48,8 +49,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#main" className="skip-to-content">
           Skip to content
         </a>
+        <ParticleField />
         <Navbar />
-        <main id="main">{children}</main>
+        <main id="main" className="relative z-10">{children}</main>
         <Footer />
       </body>
     </html>
