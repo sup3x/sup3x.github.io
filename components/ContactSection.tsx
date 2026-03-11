@@ -64,7 +64,7 @@ export function ContactSection() {
             </a>
 
             <a
-              href="mailto:sup3x@users.noreply.github.com"
+              href="mailto:kerim545498@gmail.com"
               className="group relative inline-flex items-center gap-2.5 px-8 py-4 bg-white/5 border border-white/10 rounded-lg text-slate-400 font-medium hover:border-cyan-500/30 hover:text-cyan-400 hover:bg-cyan-500/5 hover:-translate-y-0.5 transition-all duration-300"
             >
               <svg
