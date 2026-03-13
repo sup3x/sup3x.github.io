@@ -4,12 +4,11 @@ import { siteConfig } from "@/lib/data";
 import { useEffect, useState } from "react";
 
 const roles = [
-  "Developer",
-  "AI Explorer",
-  "Automation Builder",
-  "Open Source Contributor",
-  "System Tinkerer",
-  "Security Enthusiast",
+  "CLI Tool Builder",
+  "TypeScript Developer",
+  "npm Package Author",
+  "Open Source Developer",
+  "DevTools Maker",
 ];
 
 export function HeroSection() {
@@ -182,9 +181,7 @@ export function HeroSection() {
               online
             </span>
             <span className="text-slate-700">|</span>
-            <span>ready for collaboration</span>
-            <span className="text-slate-700">|</span>
-            <span className="text-cyan-500/40">{new Date().getFullYear()}</span>
+            <span>3 packages on npm</span>
           </div>
         </div>
 
@@ -216,30 +213,24 @@ export function HeroSection() {
               {/* Terminal body */}
               <div className="p-4 font-mono text-xs space-y-1.5">
                 <div className="text-slate-500">
-                  <span className="text-cyan-500">$</span> whoami
+                  <span className="text-cyan-500">$</span> npx reqbench api.example.com
                 </div>
-                <div className="text-slate-200 pl-2">sup3x</div>
+                <div className="pl-2 text-emerald-400/80">200 OK — p95: 241ms</div>
 
                 <div className="text-slate-500 pt-1">
-                  <span className="text-cyan-500">$</span> cat interests.txt
+                  <span className="text-cyan-500">$</span> npx envi-switch use staging
                 </div>
-                <div className="pl-2 space-y-0.5">
-                  <div className="text-cyan-400/90">Artificial Intelligence</div>
-                  <div className="text-cyan-400/75">Automation & DevOps</div>
-                  <div className="text-cyan-400/60">System Tinkering</div>
-                  <div className="text-cyan-400/50">Open Source</div>
-                  <div className="text-cyan-400/40">Security Research</div>
-                </div>
+                <div className="pl-2 text-cyan-400/80">Switched to staging</div>
 
                 <div className="text-slate-500 pt-1">
-                  <span className="text-cyan-500">$</span> echo $STATUS
+                  <span className="text-cyan-500">$</span> npx git-poster --theme dark
                 </div>
-                <div className="pl-2 text-emerald-400/90">Building cool stuff...</div>
+                <div className="pl-2 text-cyan-400/70">Wrote git-poster.svg</div>
 
                 <div className="text-slate-500 pt-1">
-                  <span className="text-cyan-500">$</span> uptime
+                  <span className="text-cyan-500">$</span> npm whoami
                 </div>
-                <div className="pl-2 text-slate-400">24/7 — always coding</div>
+                <div className="pl-2 text-slate-300">sup3x</div>
 
                 <div className="flex items-center gap-1 text-slate-500 pt-1">
                   <span className="text-cyan-500">$</span>

@@ -3,113 +3,86 @@ import { Project, TechItem, Stat, SiteConfig } from "@/types";
 export const siteConfig: SiteConfig = {
   name: "Kerim",
   username: "sup3x",
-  title: "Developer & Tech Enthusiast",
-  subtitle: "Exploring AI, automation and software experiments",
+  title: "Developer & CLI Tool Builder",
+  subtitle: "Building developer tools in TypeScript — load testing, environment management, and Git visualization",
   githubUrl: "https://github.com/sup3x",
 };
 
 export const stats: Stat[] = [
-  { value: "10+", label: "Projects Built" },
-  { value: "5+", label: "Tech Stacks" },
-  { value: "∞", label: "Curiosity" },
+  { value: "3", label: "Published Packages" },
+  { value: "100%", label: "TypeScript" },
+  { value: "MIT", label: "Licensed" },
 ];
 
 export const projects: Project[] = [
   {
-    slug: "ai-experiment",
-    title: "AI Experiment",
+    slug: "reqbench",
+    title: "reqbench",
     description:
-      "Neural network playground for testing and exploring machine learning concepts with real-time visualization",
-    tags: ["Python", "PyTorch", "AI"],
-    githubUrl: "https://github.com/sup3x",
+      "Simple, beautiful API load testing from the terminal. Latency percentiles, status code bars, distribution histogram, and JSON export — one command, zero config.",
+    tags: ["TypeScript", "CLI", "npm", "API Testing"],
+    githubUrl: "https://github.com/sup3x/reqbench",
     status: "active",
   },
   {
-    slug: "automation-tool",
-    title: "Automation Tool",
+    slug: "envi",
+    title: "envi",
     description:
-      "Workflow automation suite for streamlining repetitive tasks across CI/CD pipelines and dev environments",
-    tags: ["Node.js", "CLI", "Automation"],
-    githubUrl: "https://github.com/sup3x",
+      "Universal .env file manager — switch, diff, and validate environments with one command. 8 commands, 159 tests, cross-platform. Published as envi-switch on npm.",
+    tags: ["TypeScript", "CLI", "npm", "DevTools"],
+    githubUrl: "https://github.com/sup3x/envi",
     status: "active",
   },
   {
-    slug: "dev-dashboard",
-    title: "Dev Dashboard",
+    slug: "git-poster",
+    title: "git-poster",
     description:
-      "Real-time developer dashboard aggregating GitHub stats, deployment status, and project health metrics",
-    tags: ["React", "TypeScript", "API"],
-    githubUrl: "https://github.com/sup3x",
+      "Turn your Git history into a beautiful poster. Generates SVG/PNG contribution heatmap posters with 5 built-in themes — fully local, no account required.",
+    tags: ["TypeScript", "CLI", "SVG", "Git"],
+    githubUrl: "https://github.com/sup3x/git-poster",
     status: "active",
-  },
-  {
-    slug: "system-monitor",
-    title: "System Monitor",
-    description:
-      "Lightweight system resource monitor with terminal UI for tracking CPU, memory, and network usage",
-    tags: ["Rust", "TUI", "Systems"],
-    githubUrl: "https://github.com/sup3x",
-    status: "wip",
-  },
-  {
-    slug: "dotfiles",
-    title: "Dotfiles",
-    description:
-      "Personal development environment configuration — shell, editor, terminal setup with automated bootstrapping",
-    tags: ["Bash", "Config", "DevOps"],
-    githubUrl: "https://github.com/sup3x",
-    status: "active",
-  },
-  {
-    slug: "code-snippets",
-    title: "Code Snippets",
-    description:
-      "Collection of reusable code snippets, algorithms, and utility functions across multiple languages",
-    tags: ["TypeScript", "Python", "Go"],
-    githubUrl: "https://github.com/sup3x",
-    status: "wip",
   },
 ];
 
 export const techItems: TechItem[] = [
   {
-    icon: "🤖",
-    name: "Artificial Intelligence",
-    description: "LLMs, neural networks, prompt engineering, and ML pipelines",
+    icon: "🔷",
+    name: "TypeScript",
+    description: "Primary language across all projects — strict mode, type-safe CLI tools",
   },
   {
-    icon: "⚙️",
-    name: "Automation",
-    description: "CI/CD, workflow automation, scripting, and task orchestration",
+    icon: "🟢",
+    name: "Node.js",
+    description: "Runtime for all CLI tools — streams, child processes, fs operations",
   },
   {
-    icon: "🛠️",
-    name: "Software Tools",
-    description: "CLI tools, developer utilities, and productivity enhancers",
+    icon: "📦",
+    name: "npm Publishing",
+    description: "All 3 projects published as npm packages — global CLI installs",
   },
   {
-    icon: "🔬",
-    name: "System Experiments",
-    description: "Low-level tinkering, OS internals, and reverse engineering",
+    icon: "⚡",
+    name: "CLI Development",
+    description: "Commander, chalk, progress bars — beautiful terminal interfaces",
   },
   {
-    icon: "🌐",
+    icon: "🧪",
+    name: "Testing",
+    description: "Vitest test suites with high coverage — 159+ tests across projects",
+  },
+  {
+    icon: "🔄",
+    name: "CI/CD",
+    description: "GitHub Actions pipelines — multi-OS, multi-Node version matrices",
+  },
+  {
+    icon: "🔧",
+    name: "Developer Tooling",
+    description: "Building practical tools that solve real developer pain points",
+  },
+  {
+    icon: "🐙",
     name: "Open Source",
-    description: "Contributing to and building community-driven projects",
-  },
-  {
-    icon: "🔒",
-    name: "Security",
-    description: "AppSec, CTFs, vulnerability research, and hardening systems",
-  },
-  {
-    icon: "☁️",
-    name: "Cloud & DevOps",
-    description: "Containers, orchestration, infrastructure as code, CI/CD",
-  },
-  {
-    icon: "📊",
-    name: "Data & Analytics",
-    description: "Data pipelines, visualization, and insight-driven tooling",
+    description: "All projects MIT licensed — open to contributions and collaboration",
   },
 ];

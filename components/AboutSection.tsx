@@ -21,26 +21,25 @@ export function AboutSection() {
           <AnimatedSection delay={200}>
             <div className="border-l-2 border-cyan-500/30 pl-6 space-y-4">
               <p className="text-slate-200 leading-relaxed text-lg">
-                Hey, I&apos;m <span className="gradient-text font-semibold">Kerim</span> — a developer
-                who loves building things that actually work.
+                Hey, I&apos;m <span className="gradient-text font-semibold">Kerim</span> — I build
+                CLI tools in TypeScript that solve real developer problems.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                I spend most of my time experimenting with{" "}
-                <span className="text-cyan-400/80 font-medium">AI tools</span>,{" "}
-                <span className="text-cyan-400/80 font-medium">automating workflows</span>, and tinkering with
-                systems at a low level. I like exploring how software works under the hood and
-                turning rough ideas into practical, useful tools.
+                I focus on creating{" "}
+                <span className="text-cyan-400/80 font-medium">developer tools</span> that are
+                practical and well-tested. My projects include an API load tester, an environment
+                file manager, and a Git history visualizer — all published on npm and open source.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                Whether it&apos;s training a neural network, writing a CLI tool, or setting up a
-                deployment pipeline — I&apos;m always building something. Currently focused on{" "}
-                <span className="text-cyan-400/80 font-medium">AI integrations</span> and{" "}
-                <span className="text-cyan-400/80 font-medium">developer tooling</span>.
+                Every project is{" "}
+                <span className="text-cyan-400/80 font-medium">100% TypeScript</span>, ships with
+                comprehensive test suites, CI pipelines, and proper documentation. I care about
+                clean terminal output, zero-config defaults, and tools that just work.
               </p>
 
               {/* Terminal-style tags */}
               <div className="flex flex-wrap gap-2 pt-3">
-                {["ai-enthusiast", "automation-builder", "open-source", "system-tinkerer", "always-learning"].map(
+                {["typescript", "cli-tools", "npm-packages", "open-source", "developer-tooling"].map(
                   (tag, i) => (
                     <AnimatedSection key={tag} delay={400 + i * 80} animation="scale">
                       <span className="font-mono text-xs px-2.5 py-1 bg-cyan-500/10 border border-cyan-500/15 rounded text-cyan-400/70 hover:bg-cyan-500/20 hover:border-cyan-500/30 hover:text-cyan-400 transition-all duration-300 cursor-default">

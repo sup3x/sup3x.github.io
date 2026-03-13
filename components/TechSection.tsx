@@ -16,10 +16,10 @@ export function TechSection() {
         <AnimatedSection delay={100} animation="fade-right">
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-100 mb-2">
-              Tech & Interests
+              Tech Stack
             </h2>
             <p className="font-mono text-xs text-slate-500 mb-3">
-              <span className="text-cyan-500/50">$</span> cat ~/skills.json | jq &apos;.interests[]&apos;
+              <span className="text-cyan-500/50">$</span> cat package.json | jq &apos;.devDependencies&apos;
             </p>
             <div className="w-20 h-px bg-gradient-to-r from-cyan-500/50 to-transparent" />
           </div>
@@ -43,13 +43,13 @@ export function TechSection() {
           ))}
         </div>
 
-        {/* Marquee ticker */}
+        {/* Marquee ticker — real tools only */}
         <AnimatedSection delay={800} animation="fade">
           <div className="mt-16 overflow-hidden">
             <div className="flex animate-marquee whitespace-nowrap">
               {[...Array(2)].map((_, setIndex) => (
                 <div key={setIndex} className="flex items-center gap-8 mr-8">
-                  {["TypeScript", "Python", "React", "Next.js", "Node.js", "Docker", "Kubernetes", "Rust", "Go", "PostgreSQL", "Redis", "Linux", "Git", "AWS", "TensorFlow", "Bash"].map(
+                  {["TypeScript", "Node.js", "npm", "Vitest", "Commander", "Chalk", "simple-git", "sharp", "undici", "tsup", "GitHub Actions", "ESLint", "Git", "MIT License"].map(
                     (tech) => (
                       <span
                         key={`${setIndex}-${tech}`}
