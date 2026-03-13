@@ -36,7 +36,7 @@ export function ContactSection() {
               href={siteConfig.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative inline-flex items-center gap-2.5 px-8 py-4 bg-cyan-500/15 border border-cyan-500/30 rounded-lg text-cyan-400 font-medium hover:bg-cyan-500/25 hover:shadow-[0_0_40px_rgba(6,182,212,0.2)] hover:-translate-y-0.5 transition-all duration-300"
+              className="group relative inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-cyan-500/15 border border-cyan-500/30 rounded-lg text-cyan-400 text-sm sm:text-base font-medium hover:bg-cyan-500/25 hover:shadow-[0_0_40px_rgba(6,182,212,0.2)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto justify-center"
             >
               <svg
                 width="20"
@@ -65,7 +65,7 @@ export function ContactSection() {
 
             <a
               href="mailto:kerim545498@gmail.com"
-              className="group relative inline-flex items-center gap-2.5 px-8 py-4 bg-white/5 border border-white/10 rounded-lg text-slate-400 font-medium hover:border-cyan-500/30 hover:text-cyan-400 hover:bg-cyan-500/5 hover:-translate-y-0.5 transition-all duration-300"
+              className="group relative inline-flex items-center gap-2.5 px-6 sm:px-8 py-3.5 sm:py-4 bg-white/5 border border-white/10 rounded-lg text-slate-400 text-sm sm:text-base font-medium hover:border-cyan-500/30 hover:text-cyan-400 hover:bg-cyan-500/5 hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto justify-center"
             >
               <svg
                 width="18"

@@ -53,14 +53,14 @@ export function AboutSection() {
           </AnimatedSection>
 
           {/* Stats */}
-          <div className="flex lg:flex-col gap-6">
+          <div className="grid grid-cols-3 lg:flex lg:flex-col gap-3 sm:gap-6">
             {stats.map((stat, i) => (
               <AnimatedSection key={stat.label} delay={300 + i * 150} animation="fade-left">
-                <div className="gradient-border rounded-md p-5 text-center min-w-[130px] hover:shadow-[0_0_25px_rgba(6,182,212,0.1)] transition-all duration-300 group">
-                  <div className="text-2xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">
+                <div className="gradient-border rounded-md p-3 sm:p-5 text-center sm:min-w-[130px] hover:shadow-[0_0_25px_rgba(6,182,212,0.1)] transition-all duration-300 group">
+                  <div className="text-lg sm:text-2xl font-bold gradient-text mb-1 group-hover:scale-110 transition-transform duration-300">
                     <CountUp end={stat.value} />
                   </div>
-                  <div className="text-xs text-slate-500 font-mono">{stat.label}</div>
+                  <div className="text-[10px] sm:text-xs text-slate-500 font-mono">{stat.label}</div>
                 </div>
               </AnimatedSection>
             ))}

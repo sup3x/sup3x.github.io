@@ -25,11 +25,11 @@ export function TechSection() {
           </div>
         </AnimatedSection>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5">
           {techItems.map((item, index) => (
             <AnimatedSection key={item.name} delay={200 + index * 80} animation={index % 3 === 0 ? "scale" : "fade-up"}>
-              <div className="group gradient-border rounded-lg p-5 text-center hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] hover:-translate-y-1 transition-all duration-300 cursor-default">
-                <div className="text-3xl mb-3 group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.3)] transition-all duration-300">
+              <div className="group gradient-border rounded-lg p-3 sm:p-5 text-center hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] hover:-translate-y-1 transition-all duration-300 cursor-default">
+                <div className="text-2xl sm:text-3xl mb-2 sm:mb-3 group-hover:scale-125 group-hover:drop-shadow-[0_0_8px_rgba(6,182,212,0.3)] transition-all duration-300">
                   {item.icon}
                 </div>
                 <h3 className="text-sm font-semibold text-slate-100 mb-1.5 group-hover:text-cyan-400 transition-colors duration-300">

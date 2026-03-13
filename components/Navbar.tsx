@@ -51,7 +51,7 @@ export function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <nav className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-14 sm:h-16 flex items-center justify-between">
         <button
           onClick={() => handleLinkClick("home")}
           className="font-mono font-bold text-lg tracking-wider group"
@@ -104,12 +104,12 @@ export function Navbar() {
           isMobileOpen ? "max-h-80 bg-[#030712]/95 backdrop-blur-xl border-b border-cyan-500/10" : "max-h-0"
         }`}
       >
-        <ul className="px-4 pb-4 space-y-2">
+        <ul className="px-4 pb-4 space-y-1">
           {NAV_LINKS.map((link) => (
             <li key={link.id}>
               <button
                 onClick={() => handleLinkClick(link.id)}
-                className={`block w-full text-left py-2.5 text-sm transition-all duration-300 ${
+                className={`block w-full text-left py-3 text-sm transition-all duration-300 ${
                   activeSection === link.id
                     ? "text-cyan-400 pl-3 border-l-2 border-cyan-500/50"
                     : "text-slate-400 hover:text-cyan-400 hover:pl-3"

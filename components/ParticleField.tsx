@@ -20,7 +20,9 @@ export function ParticleField() {
   const animFrameRef = useRef<number>(0);
 
   const initParticles = useCallback((width: number, height: number) => {
-    const count = Math.min(Math.floor((width * height) / 15000), 80);
+    const isMobile = width < 640;
+    const maxParticles = isMobile ? 25 : 80;
+    const count = Math.min(Math.floor((width * height) / (isMobile ? 25000 : 15000)), maxParticles);
     const particles: Particle[] = [];
     for (let i = 0; i < count; i++) {
       particles.push({
@@ -95,7 +97,8 @@ export function ParticleField() {
         ctx.fillStyle = `rgba(6, 182, 212, ${Math.min(alpha + mouseInfluence, 0.8)})`;
         ctx.fill();
 
-        // Draw connections between nearby particles
+        // Draw connections between nearby particles (skip on mobile for perf)
+        if (canvas.width < 640) continue;
         for (let j = i + 1; j < particles.length; j++) {
           const p2 = particles[j];
           const ddx = p.x - p2.x;

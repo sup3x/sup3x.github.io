@@ -65,11 +65,11 @@ export function HeroSection() {
       <div className="absolute top-[40%] left-[5%] w-1 h-1 bg-cyan-300/20 rounded-full animate-float" style={{ animationDelay: "0.5s" }} />
       <div className="absolute bottom-[15%] right-[8%] w-1.5 h-1.5 bg-cyan-500/25 rounded-full animate-float-slow" style={{ animationDelay: "1s" }} />
 
-      {/* Orbiting elements */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+      {/* Orbiting elements — hidden on mobile to prevent overflow */}
+      <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
         <div className="w-2 h-2 bg-cyan-500/20 rounded-full animate-orbit" />
       </div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+      <div className="hidden sm:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
         <div className="w-1.5 h-1.5 bg-cyan-400/15 rounded-full animate-orbit-reverse" />
       </div>
 
@@ -106,7 +106,7 @@ export function HeroSection() {
           </p>
 
           <h1
-            className="text-5xl sm:text-6xl lg:text-8xl font-bold text-slate-100 mb-3"
+            className="text-4xl sm:text-6xl lg:text-8xl font-bold text-slate-100 mb-3"
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(30px)",
@@ -116,11 +116,11 @@ export function HeroSection() {
             <span className="glitch" data-text={siteConfig.name}>
               {siteConfig.name}
             </span>
-            <span className="gradient-text-animated text-6xl sm:text-7xl lg:text-9xl">.</span>
+            <span className="gradient-text-animated text-5xl sm:text-7xl lg:text-9xl">.</span>
           </h1>
 
           <div
-            className="text-lg sm:text-xl text-slate-400 mb-2 flex items-center gap-1 h-8"
+            className="text-base sm:text-xl text-slate-400 mb-2 flex items-center gap-1 h-7 sm:h-8"
             style={{
               opacity: mounted ? 1 : 0,
               transition: "opacity 0.8s ease-out 0.8s",
@@ -132,7 +132,7 @@ export function HeroSection() {
           </div>
 
           <p
-            className="text-sm sm:text-base text-slate-500 mb-10 max-w-lg leading-relaxed"
+            className="text-xs sm:text-base text-slate-500 mb-8 sm:mb-10 max-w-lg leading-relaxed"
             style={{
               opacity: mounted ? 1 : 0,
               transform: mounted ? "translateY(0)" : "translateY(15px)",
@@ -152,7 +152,7 @@ export function HeroSection() {
           >
             <a
               href="#projects"
-              className="group relative px-7 py-3 bg-cyan-500/15 border border-cyan-500/30 rounded-md text-cyan-400 text-sm font-medium hover:bg-cyan-500/25 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:-translate-y-0.5 transition-all duration-300"
+              className="group relative px-5 sm:px-7 py-3 bg-cyan-500/15 border border-cyan-500/30 rounded-md text-cyan-400 text-sm font-medium hover:bg-cyan-500/25 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] hover:-translate-y-0.5 transition-all duration-300"
             >
               <span className="mr-2 font-mono text-cyan-500/60 group-hover:text-cyan-400 transition-colors">$</span>
               View Projects
@@ -161,7 +161,7 @@ export function HeroSection() {
               href={siteConfig.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group px-7 py-3 bg-white/5 border border-white/10 rounded-md text-slate-400 text-sm font-medium hover:border-cyan-500/30 hover:text-cyan-400 hover:bg-cyan-500/5 hover:-translate-y-0.5 transition-all duration-300"
+              className="group px-5 sm:px-7 py-3 bg-white/5 border border-white/10 rounded-md text-slate-400 text-sm font-medium hover:border-cyan-500/30 hover:text-cyan-400 hover:bg-cyan-500/5 hover:-translate-y-0.5 transition-all duration-300"
             >
               <span className="mr-2 font-mono text-slate-600 group-hover:text-cyan-500/60 transition-colors">~</span>
               GitHub Profile
@@ -170,7 +170,7 @@ export function HeroSection() {
 
           {/* Terminal status line */}
           <div
-            className="mt-12 font-mono text-xs text-slate-600 flex items-center gap-4"
+            className="mt-8 sm:mt-12 font-mono text-[10px] sm:text-xs text-slate-600 flex flex-wrap items-center gap-2 sm:gap-4"
             style={{
               opacity: mounted ? 1 : 0,
               transition: "opacity 1s ease-out 1.5s",

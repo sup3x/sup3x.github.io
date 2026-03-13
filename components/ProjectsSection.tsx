@@ -36,7 +36,7 @@ export function ProjectsSection() {
           <div className="w-20 h-px bg-gradient-to-r from-cyan-500/50 to-transparent mb-10" />
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {projects.map((project, index) => (
             <AnimatedSection key={project.slug} delay={200 + index * 100} animation={index % 2 === 0 ? "fade-up" : "scale"}>
               <TiltCard>
@@ -65,7 +65,7 @@ export function ProjectsSection() {
                   </div>
 
                   {/* Card body */}
-                  <div className="p-5 relative z-20">
+                  <div className="p-4 sm:p-5 relative z-20">
                     <h3 className="text-base font-semibold text-slate-100 mb-2 group-hover:text-cyan-400 transition-colors duration-300">
                       {project.title}
                     </h3>
