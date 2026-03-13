@@ -4,13 +4,13 @@ export const siteConfig: SiteConfig = {
   name: "Kerim",
   username: "sup3x",
   title: "Developer & CLI Tool Builder",
-  subtitle: "Building developer tools in TypeScript — load testing, environment management, and Git visualization",
+  subtitle: "Building developer tools that solve real problems — load testing, environment management, and Git visualization. All open source, all on npm.",
   githubUrl: "https://github.com/sup3x",
 };
 
 export const stats: Stat[] = [
   { value: "3", label: "Published Packages" },
-  { value: "100%", label: "TypeScript" },
+  { value: "100%", label: "Open Source" },
   { value: "MIT", label: "Licensed" },
 ];
 
@@ -48,7 +48,7 @@ export const techItems: TechItem[] = [
   {
     icon: "🔷",
     name: "TypeScript",
-    description: "Primary language across all projects — strict mode, type-safe CLI tools",
+    description: "Primary language — strict mode, type-safe CLI tools",
   },
   {
     icon: "🟢",

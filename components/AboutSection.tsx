@@ -22,7 +22,7 @@ export function AboutSection() {
             <div className="border-l-2 border-cyan-500/30 pl-6 space-y-4">
               <p className="text-slate-200 leading-relaxed text-lg">
                 Hey, I&apos;m <span className="gradient-text font-semibold">Kerim</span> — I build
-                CLI tools in TypeScript that solve real developer problems.
+                CLI tools that solve real developer problems.
               </p>
               <p className="text-slate-400 leading-relaxed">
                 I focus on creating{" "}
@@ -31,15 +31,14 @@ export function AboutSection() {
                 file manager, and a Git history visualizer — all published on npm and open source.
               </p>
               <p className="text-slate-400 leading-relaxed">
-                Every project is{" "}
-                <span className="text-cyan-400/80 font-medium">100% TypeScript</span>, ships with
-                comprehensive test suites, CI pipelines, and proper documentation. I care about
-                clean terminal output, zero-config defaults, and tools that just work.
+                Every project ships with comprehensive test suites, CI pipelines, and proper
+                documentation. I care about clean terminal output, zero-config defaults, and
+                tools that just work.
               </p>
 
               {/* Terminal-style tags */}
               <div className="flex flex-wrap gap-2 pt-3">
-                {["typescript", "cli-tools", "npm-packages", "open-source", "developer-tooling"].map(
+                {["developer-tools", "cli-tools", "npm-packages", "open-source", "developer-tooling"].map(
                   (tag, i) => (
                     <AnimatedSection key={tag} delay={400 + i * 80} animation="scale">
                       <span className="font-mono text-xs px-2.5 py-1 bg-cyan-500/10 border border-cyan-500/15 rounded text-cyan-400/70 hover:bg-cyan-500/20 hover:border-cyan-500/30 hover:text-cyan-400 transition-all duration-300 cursor-default">

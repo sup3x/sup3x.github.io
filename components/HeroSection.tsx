@@ -4,10 +4,9 @@ import { siteConfig } from "@/lib/data";
 import { useEffect, useState } from "react";
 
 const roles = [
+  "Developer & Open Source Builder",
   "CLI Tool Builder",
-  "TypeScript Developer",
   "npm Package Author",
-  "Open Source Developer",
   "DevTools Maker",
 ];
 
